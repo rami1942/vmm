@@ -1,9 +1,7 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Dolteng Auto Generated</title>
+<meta http-equiv="Refresh" content="0; URL=auth/login">
 </head>
 <body>
-<h1>Hello World!</h1>
 </body>
 </html>

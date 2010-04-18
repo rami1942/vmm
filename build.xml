@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="vpjrm" default="war" basedir=".">
+
+	<property name="build.target" value="vpjrm.war" />
+	<property name="build.classes" location="src/main/webapp/WEB-INF/classes" />
+
+	<path id="classpath">
+		<fileset dir="src/main/webapp/WEB-INF/lib" includes="*.jar" />
+		<fileset dir="lib" includes="*.jar" />
+		<pathelement location="${build.classes}" />
+	</path>
+
+	<target name="init">
+		<tstamp/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac destdir="${build.classes}" source="1.6" encoding="UTF-8" includeAntRuntime="no">
+			<src path="src/main/java" />
+			<src path="src/test/java" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="src/main/webapp/WEB-INF/classes">
+			<fileset dir="src/main/resources/" />
+		</copy>
+	</target>
+
+	<target name="changeprod" depends="compile">
+		<copy todir="src/main/webapp/WEB-INF/classes" overwrite="true">
+			<fileset dir="src/production/resources/" />
+		</copy>
+	</target>
+
+	<target name="changedev" depends="compile">
+		<copy todir="src/main/webapp/WEB-INF/classes" overwrite="true">
+			<fileset dir="src/main/resources/" />
+		</copy>
+	</target>
+	
+	<target name="war" depends="changeprod">
+		<copy todir="src/main/webapp/WEB-INF/classes">
+			<fileset dir="src/main/resources/" />
+		</copy>
+		<copy todir="src/main/webapp/WEB-INF/classes" overwrite="true">
+			<fileset dir="src/production/resources/" />
+		</copy>
+		<war destfile="./${build.target}" webxml="src/main/webapp/WEB-INF/web.xml">
+			<fileset dir="src/main/webapp">
+				<exclude name="**/sources/" />
+			</fileset>
+		</war>
+		<copy todir="src/main/webapp/WEB-INF/classes" overwrite="true">
+			<fileset dir="src/main/resources/" />
+		</copy>
+	</target>
+</project>

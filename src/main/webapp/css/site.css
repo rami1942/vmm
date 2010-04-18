@@ -1,0 +1,113 @@
+h1 {
+        font-size: large;
+        border-bottom: 1px solid red;
+}
+
+h1.menu {
+        font-size: small;
+        border: none;
+        padding: 1px;
+        margin: 1px;
+}
+
+h2 {
+        font-size: medium;
+}
+
+/* Tileレイアウト関連 */
+
+div#layout_title {
+	font-size: large;
+	font-weight: bold;
+}
+td#layout_header {
+		border: none;	
+}
+
+td#layout_footer {
+        border: solid 1px #FFFFFF;
+        font-size: x-small;
+}
+
+td#layout_menu {
+		border: none;
+		border-right: solid 1px #000000;
+		border-top: solid 1px #000000;
+		vertical-align: top;
+}
+
+td#layout_body {
+		border: none;
+		border-top: solid 1px #000000;
+		padding-left: 10px;
+}
+
+table#layout_table {
+		border: none;
+        border-collapse: collapse;
+}
+
+/* 標準テーブル */
+
+
+table.std {
+        border: solid 1px #000000;
+        border-collapse: collapse;
+}
+
+table.std th {
+        padding: 4px;
+        border: solid 1px #000000;
+        background-color: #99ccff;
+}
+table.std td {
+        padding: 4px;
+        border: solid 1px #000000;
+}
+
+table.std td.header {
+        background-color: #66ccff;
+        font-size: x-large;
+}
+
+table.std td.footer {
+        border-top: 2px solid black;
+}
+
+
+div.menu {
+        font-size: x-small;
+}
+
+div.notice {
+        color: #008000;
+        font-weight: bold;
+}
+
+div.errors {
+        color: #FF0000;
+        font-weight: bold;
+}
+
+/* from cubby default.css */
+
+#banner {
+	background-color: #2d9100;
+	background-repeat: repeat;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	clear: both;
+	border: none;
+}
+
+.fieldError {
+	background-color:pink;
+}
+
+#errors {
+	color:red;	
+}

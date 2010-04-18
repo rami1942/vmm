@@ -7,4 +7,10 @@
   <include path="j2ee.dicon"/>
   <include path="s2jdbc.dicon"/>
   <component name="actionMessagesThrowsInterceptor" class="org.seasar.struts.interceptor.ActionMessagesThrowsInterceptor"/>
+  
+    <!-- htmlhelperにおいて認証インターセプターを使用する場合に登録する -->
+  <component name="authInterceptor" class="org.dyndns.bluefield.craysas.interceptor.AuthInterceptor" instance="request">
+    <property name="authComponent">"authService"</property>
+  </component>
+  
 </components>
